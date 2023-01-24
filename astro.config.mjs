@@ -3,7 +3,6 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
-import { astroImageTools } from 'astro-imagetools';
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,6 +15,7 @@ export default defineConfig({
   experimental: {
     integrations: true,
   },
+  outDir:'docs',
   markdown: {
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)
@@ -27,7 +27,6 @@ export default defineConfig({
     react(),
     tailwind({}),
     sitemap(),
-    robotsTxt(),
-    astroImageTools,
+    robotsTxt()
   ],
 });
